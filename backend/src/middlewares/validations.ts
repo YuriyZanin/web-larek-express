@@ -16,7 +16,7 @@ export const orderSchema = Joi.object({
   payment: Joi.string().valid('card', 'online').required(),
   email: Joi.string().email().required(),
   phone: Joi.string()
-    .regex(/\+7 \(\d{3}\) \d{3} \d{2} \d{2}/i)
+    .regex(/\+7\d{10}/i)
     .required(),
   address: Joi.string().required(),
   total: Joi.number().min(1).required(),
